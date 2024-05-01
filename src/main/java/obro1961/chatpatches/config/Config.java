@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.authlib.GameProfile;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.EntityType;
 import net.minecraft.text.*;
@@ -45,9 +46,9 @@ public class Config {
 
     /** Creates a new Config or YACLConfig depending on installed mods. */
     public static Config newConfig(boolean reset) {
-        config = (FABRIC_LOADER.isModLoaded("modmenu") && FABRIC_LOADER.isModLoaded("yet_another_config_lib_v3"))
-            ? new YACLConfig()
-            : new Config();
+        FabricLoader fbr = FabricLoader.getInstance();
+        boolean accessibleInGame = fbr.isModLoaded("modmenu") || (fbr.isModLoaded("catalogue") && fbr.isModLoaded("menulogue"));
+        config = accessibleInGame ? new YACLConfig() : DEFAULTS;
 
         if(!reset)
             read();

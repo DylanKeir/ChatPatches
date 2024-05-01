@@ -51,7 +51,9 @@
     "yet_another_config_lib_v3": "*"
   },
   "recommends": {
-    "modmenu": "*"
+    "modmenu": "*",
+    "menulogue": "*",
+    "catalogue": "*"
   },
   "suggests": {
     "nochatreports": "*"
