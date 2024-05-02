@@ -6,9 +6,9 @@ import java.util.function.Function
 import java.util.stream.Stream
 
 plugins {
-	id "fabric-loom" version "1.6-SNAPSHOT"
+	id "fabric-loom" version "${loom}"
 	id "maven-publish"
-	id "me.modmuss50.mod-publish-plugin" version "0.5.1"
+	id "me.modmuss50.mod-publish-plugin" version "${publish_plugin}"
 }
 
 group = project.group
@@ -24,7 +24,6 @@ String changelogText = "Changelog could not be found... 😬"
 
 repositories {
   	mavenCentral()
-
 	maven { url "https://maven.terraformersmc.com/releases/" } // Mod Menu
 	maven { url "https://maven.isxander.dev/releases" } // YACL
 }
@@ -40,10 +39,22 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", version
+	var props = new Properties()
+	props.put("version", version)
+	props.put("id", archives_base_name) // mod id
+	props.put("targets",
+		// transforms lists into arrays of strings, otherwise wraps the singular string in quotes
+		targets.contains(",")
+			? Stream.of( targets.split(",\\s*") ).map(v -> "\"$v\"").toList().toString()
+			: "\"$targets\""
+	)
+	// mc versions (as an array or string)
+	props.put("loader", loader) // fabric loader
+
+	props.forEach(inputs::property)
 
 	filesMatching("fabric.mod.json") {
-		expand "version": version
+		expand(props)
 
 		/* filter {
 			it.replace("example_key", rootProject.exampleVar)
