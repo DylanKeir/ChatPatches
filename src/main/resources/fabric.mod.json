@@ -43,7 +43,7 @@
   ],
 
   "depends": {
-    "java": ">=17",
+    "java": ">=21",
     "minecraft": ${targets},
     "fabricloader": "~${loader}",
     "fabric-api": "*",
