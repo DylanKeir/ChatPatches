@@ -133,7 +133,7 @@
     "text.chatpatches.desc.copyReplyFormat": "The text that is filled into the chat box after right-clicking on a chat message and clicking on the 'Reply' button in the copy menu. '$' is required and will be filled with the message sender's name.",
     "text.chatpatches.desc.copyColor": "The color of the selection box that's shown after right-clicking on a chat message.",
 
-    "text.chatpatches.copy.copied": "Copied message component: \"%s\"!",
+    "text.chatpatches.copy.copied": "Copied message: \"%s\"!",
     "text.chatpatches.copy.copyString": "Copy String >",
     "text.chatpatches.copy.rawString": "Raw",
     "text.chatpatches.copy.formattedString": "Formatted",

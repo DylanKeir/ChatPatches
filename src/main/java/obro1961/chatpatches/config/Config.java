@@ -298,7 +298,8 @@ public class Config {
                     this.val = inc;
                 }
             } catch(NoSuchFieldException | IllegalAccessException | ClassCastException e) {
-                LOGGER.error("[ConfigOption.set({})] An error occurred trying to set a config option:", obj, e);
+                LOGGER.error("[ConfigOption.set({})] An error occurred trying to set a config option", obj);
+                ChatPatches.logInfoReportMessage(e);
             }
         }
 

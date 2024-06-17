@@ -134,7 +134,7 @@ public abstract class ChatHudMixin implements ChatHudAccessor {
 
     /** Disables logging commands to the vanilla command log if the Chat Patches' ChatLog is enabled. */
     @WrapWithCondition(method = "addToMessageHistory", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/CommandHistoryManager;add(Ljava/lang/String;)V"))
-    private boolean disableCommandLog(CommandHistoryManager manager, String message) {
+    private boolean toggleCommandLog(CommandHistoryManager manager, String message) {
         return patcher.toggleCommandLog(manager, message);
     }
 

@@ -307,7 +307,7 @@ public class YACLConfig extends Config {
 
         String ext = "webp";
         String image = "textures/preview/" + opt.key.replaceAll("([A-Z])", "_$1").toLowerCase() + "." + ext;
-        Identifier id = Identifier.of(ChatPatches.MOD_ID, image);
+        Identifier id = ChatPatches.id(image);
 
         try {
             if( MinecraftClient.getInstance().getResourceManager().getResource(id).isPresent() )

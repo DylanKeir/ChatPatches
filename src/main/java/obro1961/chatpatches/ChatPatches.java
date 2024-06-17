@@ -79,7 +79,7 @@ public class ChatPatches implements ClientModInitializer {
 			}
 		});
 
-		LOGGER.info("[ChatPatches()] Finished setting up!");
+		LOGGER.info("[ChatPatches()] Finished setup!");
 	}
 
 
@@ -90,8 +90,8 @@ public class ChatPatches implements ClientModInitializer {
 	 * <br><br>
 	 * Outputs the following message:
 	 * <pre>
-	 * [$class.$method] /!\ Please report this error on GitHub or Discord with the full log file attached! /!\
-	 * $error
+	 * [${class}.${method}] /!\ Please report this error on GitHub or Discord with the full log file attached! /!\
+	 * ${error}
 	 * </pre>
 	 */
 	public static void logInfoReportMessage(Throwable error) {
@@ -104,9 +104,12 @@ public class ChatPatches implements ClientModInitializer {
 
 	/**
 	 * Creates a new Identifier using the ChatPatches mod ID.
+	 * {@link Identifier#of(String, String)} is future-proof
+	 * compared to {@link Identifier#Identifier(String, String)}
+	 * (as of 06/16/2024).
 	 */
 	public static Identifier id(String path) {
-		return new Identifier(MOD_ID, path);
+		return Identifier.of(MOD_ID, path);
 	}
 
 	/**

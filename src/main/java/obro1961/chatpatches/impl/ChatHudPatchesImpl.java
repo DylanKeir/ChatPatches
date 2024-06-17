@@ -161,7 +161,7 @@ public class ChatHudPatchesImpl implements ChatHudPatches {
 	 * Disables the vanilla command log, which is a feature that logs up to 50 commands,
 	 * if the ChatLog is already enabled as specified by {@link Config#chatlog}.
 	 *
-	 * @see ChatHudMixin#disableCommandLog(CommandHistoryManager, String)
+	 * @see ChatHudMixin#toggleCommandLog(CommandHistoryManager, String)
 	 */
 	@Override
 	public boolean toggleCommandLog(CommandHistoryManager manager, String message) {
