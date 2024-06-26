@@ -1,10 +1,14 @@
 # Changelog
 
-## Chat Patches `201.5.6` for Minecraft 1.20, 1.20.1 on Fabric, Quilt
+## Chat Patches `201.5.6` for Minecraft 1.20.1 on Fabric, Quilt
 - Improve performance when using compact chat
 - Make ModMenu a recommended dependency instead of a required one; allow Menulogue + Catalogue ([#120](https://www.github.com/mrbuilder1961/ChatPatches/issues/120), [#145](https://www.github.com/mrbuilder1961/ChatPatches/issues/145))
 - Bump all dependencies
 - Port long since upgraded `build.gradle`, `fabric.mod.json`
+- Unfortunately this version is still missing features from newer ones like `206.6.5` :(
+- Sorry for the super long delay for this minor update.. my bad!
+- **Dev notes:**
+  - Bugs still presumed to be unfixed: [#119](https://www.github.com/mrbuilder1961/ChatPatches/issues/119), [#145](https://www.github.com/mrbuilder1961/ChatPatches/issues/145), [#146](https://www.github.com/mrbuilder1961/ChatPatches/issues/146), [#153](https://www.github.com/mrbuilder1961/ChatPatches/issues/153)(/[#160](https://www.github.com/mrbuilder1961/ChatPatches/issues/160))
 
 ## Chat Patches `201.5.5` for Minecraft 1.20, 1.20.1 on Fabric, Quilt
 - YACL images now load without crashing the game! Enjoy preview images right from the get-go!
