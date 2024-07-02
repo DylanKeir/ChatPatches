@@ -2,6 +2,7 @@
 
 ## Chat Patches `206.6.7` for Minecraft 1.20.5, 1.20.6 on Fabric, Quilt
 - Ported codecification of chat log, plus the fix for [#180](https://www.github.com/mrbuilder1961/ChatPatches/issues/180)
+- Removed stray debug logpoint in `ChatUtils#tryCondenseMessage`
 
 ## Chat Patches `206.6.6` for Minecraft 1.20.5, 1.20.6 on Fabric, Quilt
 - No longer compatible with 1.21
