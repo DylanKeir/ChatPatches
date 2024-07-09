@@ -307,15 +307,14 @@ public class YACLConfig extends Config {
 
         String ext = "webp";
         String image = "textures/preview/" + opt.key.replaceAll("([A-Z])", "_$1").toLowerCase() + "." + ext;
-        Identifier id = Identifier.of(ChatPatches.MOD_ID, image);
+        Identifier id = ChatPatches.id(image);
 
         try {
             if( MinecraftClient.getInstance().getResourceManager().getResource(id).isPresent() )
                 builder.webpImage(id);
-            else
-                ChatPatches.LOGGER.debug("[YACLConfig.desc] No .{} image found for '{}'", ext, opt.key.replaceAll("([A-Z])", "_$1").toLowerCase());
         } catch(Throwable e) {
-            ChatPatches.LOGGER.error("[YACLConfig.desc] An error occurred while trying to use '{}:{}' :", ChatPatches.MOD_ID, image, e);
+            ChatPatches.LOGGER.error("[YACLConfig.desc] An error occurred while trying to use '{}:{}' :", ChatPatches.MOD_ID, image);
+			ChatPatches.logInfoReportMessage(e);
         }
 
         return builder.build();
@@ -326,7 +325,7 @@ public class YACLConfig extends Config {
     }
 
     private static ButtonOption action(String key, Object... args) {
-        Object o = new Object();
+        Object o = new Object(); // null?
         return ButtonOption.createBuilder()
             .name(Text.translatable( "text.chatpatches." + key, (args[0].equals(-1) ? new Object[0] : args) )) // args or nothing
             .description(desc( new ConfigOption<>(o, o, key) ))

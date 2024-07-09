@@ -4,6 +4,8 @@
 - Ported codecification of chat log, plus the fix for [#180](https://www.github.com/mrbuilder1961/ChatPatches/issues/180)
 - Ported fix for [#183](https://github.com/mrbuilder1961/ChatPatches/issues/183) (aka [#178](https://github.com/mrbuilder1961/ChatPatches/issues/178))
 - Removed stray debug logpoint in `ChatUtils#tryCondenseMessage`
+- Fixed `YACLConfig` not using the proper Chat Patches `Identifier` method
+- Removed unnecessary debug logging when some options inevitably don't have preview images associated with them
 
 ## Chat Patches `206.6.6` for Minecraft 1.20.5, 1.20.6 on Fabric, Quilt
 - No longer compatible with 1.21
